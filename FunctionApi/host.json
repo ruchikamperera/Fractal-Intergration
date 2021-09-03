@@ -1,0 +1,27 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "openApi": {
+    "info": {
+      "version": "1.0.0",
+      "title": "Open API on Fractal Intergration",
+     
+      "contact": {
+        "name": "Aliencube Community",
+        "email": "no-reply@aliencube.org",
+        "url": "https://github.com/aliencube/AzureFunctions.Extensions/issues"
+      },
+      "license": {
+        "name": "MIT",
+        "url": "http://opensource.org/licenses/MIT"
+      }
+    }
+  }
+}

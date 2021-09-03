@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "appInsightsInstrumentationKey": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/a4eed34b-4f57-45f8-9b3c-576b6af2f52b/resourceGroups/cw-amr-esbbch-p/providers/Microsoft.KeyVault/vaults/cw-esbbch-vault-prod"
+        },
+        "secretName": "AppInsightsInstrumentationKey"
+      }
+    },
+    "connectionString": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/a4eed34b-4f57-45f8-9b3c-576b6af2f52b/resourceGroups/cw-amr-esbbch-p/providers/Microsoft.KeyVault/vaults/cw-esbbch-vault-prod"
+        },
+        "secretName": "ConnectionString"
+      }
+    }
+  }
+}
