@@ -3,9 +3,8 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "ConnectionString": "test"
+    "ConnectionString": "Server=TI-NB-438;Database=Fractal;Trusted_Connection=True;MultipleActiveResultSets=true"
   },
-
   "info": {
     "version": "1.0.0",
     "title": "Open API Sample on Azure Functions",

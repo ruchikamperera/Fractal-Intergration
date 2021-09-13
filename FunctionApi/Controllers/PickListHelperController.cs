@@ -124,38 +124,38 @@ namespace FunctionApi.Controllers
             }
         }
 
-        //[OpenApiOperation("PickListHelper", "PickListHelper")]
-        //[OpenApiResponseWithBody(HttpStatusCode.OK, "application/json", typeof(PickListHelper))]
-        //[ProducesResponseType((int)HttpStatusCode.OK)]
-        //[ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        //[ProducesResponseType((int)HttpStatusCode.UnprocessableEntity)]
-        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        //[FunctionName("UpdatePickListHelpers")]
-        //public async Task<IActionResult> UpdatePickListHelper(
+        [OpenApiOperation("PickListHelper", "PickListHelper")]
+        [OpenApiResponseWithBody(HttpStatusCode.OK, "application/json", typeof(PicklistHelper))]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.UnprocessableEntity)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [FunctionName("UpdatePickListHelpers")]
+        public async Task<IActionResult> UpdatePickListHelper(
 
-        //  [HttpTrigger(AuthorizationLevel.Anonymous, "Put", Route = "PickListHelper")]
-        //      HttpRequest request, ILogger logger)
-        //{
-        //    List<PickListHelper> PickListHelpers = new List<PickListHelper>();
-        //    ;
-        //    try
-        //    {
-        //        //var result = await Mediator.Send(new GetPickListHelpersCommand());
-        //        var validateRequest = await request.GetJsonBody<UpdatePickListHelpersCommand, UpdatePickListHelperCommandValidator>();
+          [HttpTrigger(AuthorizationLevel.Anonymous, "Put", Route = "PickListHelper")]
+              HttpRequest request, ILogger logger)
+        {
+            List<PicklistHelper> PickListHelpers = new List<PicklistHelper>();
+            ;
+            try
+            {
+                //var result = await Mediator.Send(new GetPickListHelpersCommand());
+                var validateRequest = await request.GetJsonBody<UpdatePickListHelpersCommand, UpdatePickListHelperCommandValidator>();
 
-        //        if (!validateRequest.IsValid)
-        //        {
-        //            return SendFailedValidationResult(validateRequest, Type);
-        //        }
+                if (!validateRequest.IsValid)
+                {
+                    return SendFailedValidationResult(validateRequest, Type);
+                }
 
-        //        var result = await Mediator.Send(validateRequest.Value);
-        //        return SendSuccessfulResult(Type, result, validateRequest);
+                var result = await Mediator.Send(validateRequest.Value);
+                return SendSuccessfulResult(Type, result, validateRequest);
 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return SendFailedResult(ex, Type, logger);
-        //    }
-        //}
+            }
+            catch (Exception ex)
+            {
+                return SendFailedResult(ex, Type, logger);
+            }
+        }
     }
 }
